@@ -10,48 +10,55 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Content View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ItunesSearchTests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ContentViewController" customModule="ItunesSearchTests" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qcs-rc-mPj">
-                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="MaZ-XA-Xb2"/>
-                                </connections>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vpw-1H-aFb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vpw-1H-aFb">
                                 <rect key="frame" x="0.0" y="76" width="375" height="591"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="OA9-Nd-8GZ"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="w2P-Pm-bGT"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="CYj-Sk-lYF"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="dqH-Ir-6xr"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="R4x-oo-vUm">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Eso-7F-jjg"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vpw-1H-aFb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BAZ-gd-qt4"/>
+                            <constraint firstItem="R4x-oo-vUm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="G3H-rv-oNP"/>
+                            <constraint firstItem="R4x-oo-vUm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Lel-Pe-4A7"/>
+                            <constraint firstItem="vpw-1H-aFb" firstAttribute="top" secondItem="R4x-oo-vUm" secondAttribute="bottom" id="RuJ-Q9-Fbd"/>
+                            <constraint firstItem="vpw-1H-aFb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Xpq-Qz-5v0"/>
+                            <constraint firstItem="vpw-1H-aFb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ZOw-fk-KJi"/>
+                            <constraint firstItem="R4x-oo-vUm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b37-wh-rER"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="searchDisplayController" destination="aJ2-cr-RrL" id="2J4-Hv-DoX"/>
-                        <outlet property="tableView" destination="vpw-1H-aFb" id="MWP-hC-StL"/>
+                        <outlet property="searchDisplayController" destination="hcA-0E-jkG" id="NG9-tP-IrD"/>
+                        <outlet property="tableView" destination="vpw-1H-aFb" id="z7G-SU-PgC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="aJ2-cr-RrL">
+                <searchDisplayController id="hcA-0E-jkG">
                     <connections>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="x8i-G1-sGF"/>
-                        <outlet property="searchBar" destination="Qcs-rc-mPj" id="1ZL-J7-pfe"/>
-                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="9Aw-Sy-zcN"/>
-                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="ikZ-u7-zvo"/>
-                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="hSI-0l-4dC"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="5NV-C3-7NL"/>
+                        <outlet property="searchBar" destination="R4x-oo-vUm" id="GOD-vj-W20"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="vJu-DT-lSg"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="1qE-Kb-WOl"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="N0U-Fk-1ig"/>
                     </connections>
                 </searchDisplayController>
             </objects>

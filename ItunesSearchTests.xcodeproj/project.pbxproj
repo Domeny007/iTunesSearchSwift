@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7CCD585920761C0E00AD3566 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCD585820761C0E00AD3566 /* AppDelegate.swift */; };
-		7CCD585B20761C0E00AD3566 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCD585A20761C0E00AD3566 /* ViewController.swift */; };
 		7CCD585E20761C0E00AD3566 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CCD585C20761C0E00AD3566 /* Main.storyboard */; };
 		7CCD586020761C1000AD3566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CCD585F20761C1000AD3566 /* Assets.xcassets */; };
 		7CCD586320761C1000AD3566 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CCD586120761C1000AD3566 /* LaunchScreen.storyboard */; };
@@ -18,12 +17,12 @@
 		AACA854F207A1CD30018664D /* ContentEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA854E207A1CD30018664D /* ContentEndPoint.swift */; };
 		AACA8553207A547B0018664D /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA8552207A547B0018664D /* Content.swift */; };
 		AACA8555207A5C600018664D /* ContentClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA8554207A5C600018664D /* ContentClient.swift */; };
+		AACA8559207A6CF10018664D /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA8558207A6CF10018664D /* ContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7CCD585520761C0E00AD3566 /* ItunesSearchTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItunesSearchTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CCD585820761C0E00AD3566 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7CCD585A20761C0E00AD3566 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7CCD585D20761C0E00AD3566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7CCD585F20761C1000AD3566 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CCD586220761C1000AD3566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,6 +33,7 @@
 		AACA854E207A1CD30018664D /* ContentEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentEndPoint.swift; sourceTree = "<group>"; };
 		AACA8552207A547B0018664D /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		AACA8554207A5C600018664D /* ContentClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentClient.swift; sourceTree = "<group>"; };
+		AACA8558207A6CF10018664D /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 		AACA8549207A1B420018664D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7CCD585A20761C0E00AD3566 /* ViewController.swift */,
+				AACA8558207A6CF10018664D /* ContentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -194,7 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CCD585B20761C0E00AD3566 /* ViewController.swift in Sources */,
+				AACA8559207A6CF10018664D /* ContentViewController.swift in Sources */,
 				AACA8555207A5C600018664D /* ContentClient.swift in Sources */,
 				AACA854F207A1CD30018664D /* ContentEndPoint.swift in Sources */,
 				7CCD585920761C0E00AD3566 /* AppDelegate.swift in Sources */,

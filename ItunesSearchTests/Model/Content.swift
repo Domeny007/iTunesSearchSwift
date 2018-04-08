@@ -13,7 +13,7 @@ struct Content {
         static let name = "trackName"
         static let artworkURL = "artworkUrl512"
         static let description = "description"
-        static let formattedPrice = "formatedPrice"
+        static let formattedPrice = "formattedPrice"
         static let price = "price"
     }
     init?(dictionary: [String : Any]) {
@@ -22,7 +22,7 @@ struct Content {
             let description = dictionary[APIKeys.description] as? String,
             let formattedPrice = dictionary[APIKeys.formattedPrice] as? String,
             let price = dictionary[APIKeys.price] as? Double
-        else {return nil}
+            else {return nil}
         
         self.name = name
         self.artworkURL = URL(string: artworkURLString)

@@ -2,6 +2,7 @@ import Foundation
 
 //example: https://itunes.apple.com/search?term=...&entity=...&country=us
 enum ContentEndPoint {
+    
     case search(term: String, entity: String)
     
     var request: URLRequest {
@@ -16,7 +17,7 @@ enum ContentEndPoint {
     
     
     private var baseURL: String {
-        return "https://itunes.apple.com"
+        return "https://itunes.apple.com/"
     }
     private var path: String {
         switch self {

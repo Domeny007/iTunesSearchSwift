@@ -34,7 +34,6 @@ class NetworkProcessor {
             } else {
                 switch httpResponse.statusCode {
                 case 200:
-                    // OK parse JSON into Foundation objects (array, dictionary..)
                     do {
                         let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
                         completion(json, httpResponse, nil)
