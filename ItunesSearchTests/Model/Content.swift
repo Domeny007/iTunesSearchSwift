@@ -2,33 +2,37 @@ import Foundation
 
 struct Content {
     
-    var name: String
-    var price: Double
-    var description: String
-    var formattedPrice: String
+    var name: String?
+    var price: Double?
+    var description: String?
+    var formattedPrice: String?
     var artworkURL: URL?
     var itunesURL: URL?
     
+
     private struct APIKeys {
         static let name = "trackName"
-        static let artworkURL = "artworkUrl512"
+        static let artworkURL = "artworkUrl60"
         static let description = "description"
         static let formattedPrice = "formattedPrice"
         static let price = "price"
+        static let itunesUrl = "trackViewUrl"
     }
     init?(dictionary: [String : Any]) {
-        guard let name = dictionary[APIKeys.name] as? String,
-            let artworkURLString = dictionary[APIKeys.artworkURL] as? String,
-            let description = dictionary[APIKeys.description] as? String,
-            let formattedPrice = dictionary[APIKeys.formattedPrice] as? String,
+            let name = dictionary[APIKeys.name] as? String
+            let artworkURLString = dictionary[APIKeys.artworkURL] as? String
+            let description = dictionary[APIKeys.description] as? String
+            let formattedPrice = dictionary[APIKeys.formattedPrice] as? String
             let price = dictionary[APIKeys.price] as? Double
-            else {return nil}
+            let itunesUrl = dictionary[APIKeys.itunesUrl] as? String
         
-        self.name = name
-        self.artworkURL = URL(string: artworkURLString)
-        self.description = description
-        self.formattedPrice = formattedPrice
-        self.price = price
-        
+        if name == nil { self.name = "Dont have name" } else { self.name = name }
+        if description == nil { self.description = "Dont have description" } else { self.description = description }
+        if formattedPrice == nil { self.formattedPrice = "Dont have price" } else { self.formattedPrice = formattedPrice }
+        if price == nil { self.price = -1 } else { self.price = price
+        }
+        self.artworkURL = URL(string: artworkURLString!)
+        self.itunesURL = URL(string: itunesUrl!)
     }
+    
 }

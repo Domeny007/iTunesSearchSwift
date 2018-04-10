@@ -1,9 +1,8 @@
 import Foundation
 
-//example: https://itunes.apple.com/search?term=...&entity=...&country=us
 enum ContentEndPoint {
     
-    case search(term: String, entity: String)
+    case search(term: String, entity: String, limit: String)
     
     var request: URLRequest {
         var components = URLComponents(string: baseURL)
@@ -13,9 +12,8 @@ enum ContentEndPoint {
         let url = components?.url
         return URLRequest(url: url!)
         
+        
     }
-    
-    
     private var baseURL: String {
         return "https://itunes.apple.com/"
     }
@@ -27,7 +25,8 @@ enum ContentEndPoint {
     private struct ParameterKeys {
         static let country = "country"
         static var term = "term"
-        static let entity = "entity"
+        static let entity = "media"
+        static let limit = "limit"
     }
     
     private struct DefaultValues {
@@ -36,16 +35,17 @@ enum ContentEndPoint {
     }
     var parameters: [String: Any] {
         switch self {
-        case .search(let term, let entity):
+        case .search(let term, let entity, let limit):
             let parameters: [String: Any] = [
                 ParameterKeys.term    : term,
                 ParameterKeys.country : DefaultValues.country,
-                ParameterKeys.entity  : entity
+                ParameterKeys.entity  : entity,
+                ParameterKeys.limit   : limit
             ]
-            
             return parameters
         }
     }
+    
     private var queryComponents: [URLQueryItem] {
         var components = [URLQueryItem]()
         

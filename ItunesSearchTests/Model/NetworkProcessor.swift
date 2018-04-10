@@ -1,22 +1,16 @@
 import Foundation
-
-public let NetworkingErrorDomain = "\(Bundle.main.bundleIdentifier!).NetworkingError"
-public let MissingHTTPResponseError: Int = 10
-public let UnexpectedResponseError: Int = 20
-
 class NetworkProcessor {
+    
     let request: URLRequest
     lazy var configuration: URLSessionConfiguration = URLSessionConfiguration.default
     lazy var session: URLSession = URLSession(configuration: self.configuration)
-    
-    init(request: URLRequest) {
-        self.request = request
-    }
-    
     typealias JSON = [String : Any]
     typealias JSONHandler = (JSON?, HTTPURLResponse?, Error?) -> Void
     typealias DataHandler = (Data?, HTTPURLResponse?, Error?) -> Void
     
+    init(request: URLRequest) {
+        self.request = request
+    }
     func downloadJSON(completion: @escaping JSONHandler)
     {
         let dataTask = session.dataTask(with: self.request) { (data, response, error) in
@@ -45,7 +39,6 @@ class NetworkProcessor {
                 }
             }
         }
-        
         dataTask.resume()
     }
     
@@ -72,7 +65,6 @@ class NetworkProcessor {
                 }
             }
         }
-        
         dataTask.resume()
     }
 }

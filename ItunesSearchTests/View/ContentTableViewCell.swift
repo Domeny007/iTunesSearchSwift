@@ -12,7 +12,7 @@ class ContentTableViewCell: UITableViewCell {
             self.updateUI()
         }
     }
-    
+    //    MARK: updating content table view cell
     func updateUI() {
         contentNameUILabel.text = content.name
         contentDescriptionUILabel.text = content.description
@@ -20,12 +20,16 @@ class ContentTableViewCell: UITableViewCell {
         if content.price == 0 {
             contentPriceUILabel.text = content.formattedPrice
         } else {
-            contentPriceUILabel.text = "$\(content.price)"
+            contentPriceUILabel.text = "$\(String(describing: content.price))"
+        }
+        if content.price == -1 {
+            contentPriceUILabel.text = ""
         }
         self.contentUIImageView.image = nil
         if let url = content.artworkURL {
             let request = URLRequest(url: url)
             let networkProcessor = NetworkProcessor(request: request)
+            
             
             networkProcessor.downloadData { (data, responce, error) in
                 DispatchQueue.main.async {

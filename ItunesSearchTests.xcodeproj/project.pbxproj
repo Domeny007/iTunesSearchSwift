@@ -11,6 +11,7 @@
 		7CCD585E20761C0E00AD3566 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CCD585C20761C0E00AD3566 /* Main.storyboard */; };
 		7CCD586020761C1000AD3566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CCD585F20761C1000AD3566 /* Assets.xcassets */; };
 		7CCD586320761C1000AD3566 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CCD586120761C1000AD3566 /* LaunchScreen.storyboard */; };
+		AA45948C207B94670087195C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA45948B207B94670087195C /* SettingsViewController.swift */; };
 		AACA8545207A18AA0018664D /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA8543207A18AA0018664D /* ContentTableViewCell.swift */; };
 		AACA8546207A18AA0018664D /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACA8544207A18AA0018664D /* ContentTableViewCell.xib */; };
 		AACA854D207A1BAF0018664D /* NetworkProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA854C207A1BAF0018664D /* NetworkProcessor.swift */; };
@@ -18,6 +19,8 @@
 		AACA8553207A547B0018664D /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA8552207A547B0018664D /* Content.swift */; };
 		AACA8555207A5C600018664D /* ContentClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA8554207A5C600018664D /* ContentClient.swift */; };
 		AACA8559207A6CF10018664D /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA8558207A6CF10018664D /* ContentViewController.swift */; };
+		AAE970CE207CDB16009ADFD1 /* ConstantsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE970CD207CDB16009ADFD1 /* ConstantsFile.swift */; };
+		AAE970D5207D1845009ADFD1 /* ContentViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE970D4207D1845009ADFD1 /* ContentViewControllerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,7 @@
 		7CCD585F20761C1000AD3566 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CCD586220761C1000AD3566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CCD586420761C1000AD3566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA45948B207B94670087195C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AACA8543207A18AA0018664D /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
 		AACA8544207A18AA0018664D /* ContentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
 		AACA854C207A1BAF0018664D /* NetworkProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProcessor.swift; sourceTree = "<group>"; };
@@ -34,6 +38,8 @@
 		AACA8552207A547B0018664D /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		AACA8554207A5C600018664D /* ContentClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentClient.swift; sourceTree = "<group>"; };
 		AACA8558207A6CF10018664D /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		AAE970CD207CDB16009ADFD1 /* ConstantsFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsFile.swift; sourceTree = "<group>"; };
+		AAE970D4207D1845009ADFD1 /* ContentViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewControllerExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 				AACA8547207A1B230018664D /* Model */,
 				AACA8548207A1B2F0018664D /* View */,
 				AACA8549207A1B420018664D /* Controller */,
+				AAE970D1207D17F6009ADFD1 /* Extensions */,
 				AACA854A207A1B610018664D /* Other */,
 				AACA854B207A1B6D0018664D /* InfoPlist */,
 			);
@@ -99,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				AACA8558207A6CF10018664D /* ContentViewController.swift */,
+				AA45948B207B94670087195C /* SettingsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -106,6 +114,7 @@
 		AACA854A207A1B610018664D /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				AAE970CD207CDB16009ADFD1 /* ConstantsFile.swift */,
 				7CCD585820761C0E00AD3566 /* AppDelegate.swift */,
 				7CCD585C20761C0E00AD3566 /* Main.storyboard */,
 				7CCD585F20761C1000AD3566 /* Assets.xcassets */,
@@ -120,6 +129,14 @@
 				7CCD586420761C1000AD3566 /* Info.plist */,
 			);
 			name = InfoPlist;
+			sourceTree = "<group>";
+		};
+		AAE970D1207D17F6009ADFD1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AAE970D4207D1845009ADFD1 /* ContentViewControllerExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,7 +217,10 @@
 				7CCD585920761C0E00AD3566 /* AppDelegate.swift in Sources */,
 				AACA8545207A18AA0018664D /* ContentTableViewCell.swift in Sources */,
 				AACA854D207A1BAF0018664D /* NetworkProcessor.swift in Sources */,
+				AAE970D5207D1845009ADFD1 /* ContentViewControllerExtensions.swift in Sources */,
 				AACA8553207A547B0018664D /* Content.swift in Sources */,
+				AA45948C207B94670087195C /* SettingsViewController.swift in Sources */,
+				AAE970CE207CDB16009ADFD1 /* ConstantsFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +367,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33NC89QWWR;
 				INFOPLIST_FILE = ItunesSearchTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -365,6 +386,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 33NC89QWWR;
 				INFOPLIST_FILE = ItunesSearchTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

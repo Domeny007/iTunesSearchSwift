@@ -1,41 +1,53 @@
 import UIKit
-
-class ContentViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-
+import SafariServices
+class ContentViewController: UIViewController, UITableViewDataSource,UITableViewDelegate{
+    
     @IBOutlet weak var tableView: UITableView!
+    
     
     var contentArray: [Content]?
     var contentClient = ContentClient()
-    
     let contentCellIdentifier = "contentCellIdentefier"
     let contentNibName =  "ContentTableViewCell"
+    var searchController = UISearchController(searchResultsController: nil)
+    var resultControllet = UIViewController()
+    var mediaString: String?
+    var numberOfRowsString: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
-        
-        fetchContent()
+        prepareTableView()
+        createSearchViewController()
+    }
+    
+ //    MARK: Preparing TableView
+    func prepareTableView() {
         self.tableView.estimatedRowHeight = self.tableView.rowHeight
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    func fetchContent() {
-        contentClient.fetchContent(withTerm: "instagram", inEntity: "software") { (contentArray) in
-            self.contentArray = contentArray
-            self.tableView.reloadData()
-        }
+    //    MARK: - Creating UISearchViewController
+    func createSearchViewController() {
+        searchController.searchBar.delegate = self
+        tableView.tableHeaderView = self.searchController.searchBar
+        searchController.hidesNavigationBarDuringPresentation = false
+        definesPresentationContext = true
+        searchController.dimsBackgroundDuringPresentation = false
     }
     
+    //    MARK: - registration of cell
     func registerCell() {
         let nib = UINib(nibName: contentNibName, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: contentCellIdentifier)
     }
     
-    // MARK: - Table view data source
     
+    // MARK: - Table view data source methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let contentArray = contentArray {
-            return contentArray.count
+        if contentArray != nil {
+            let contentArray = self.contentArray
+            return contentArray!.count
         } else {
             return 0
         }
@@ -43,10 +55,24 @@ class ContentViewController: UIViewController,UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: contentCellIdentifier, for: indexPath) as! ContentTableViewCell
-        cell.content = contentArray?[indexPath.row]
+        if tableView == self.tableView {
+             cell.content = contentArray?[indexPath.row]
+        }
+       
         cell.selectionStyle = .blue
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let content = contentArray?[indexPath.row]
+        guard let url = content?.itunesURL else {return}
+        self.showContentsWebSite(with: url)
+        print(url)
         
     }
-
+    func showContentsWebSite(with url: URL) {
+        let webViewController = SFSafariViewController(url: url)
+        present(webViewController, animated: true, completion: nil)
+        
+    }
 }
