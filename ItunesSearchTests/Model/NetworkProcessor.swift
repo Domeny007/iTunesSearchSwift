@@ -11,6 +11,8 @@ class NetworkProcessor {
     init(request: URLRequest) {
         self.request = request
     }
+    
+    //    MARK: downloading JSON function
     func downloadJSON(completion: @escaping JSONHandler)
     {
         let dataTask = session.dataTask(with: self.request) { (data, response, error) in
@@ -41,7 +43,7 @@ class NetworkProcessor {
         }
         dataTask.resume()
     }
-    
+    //    MARK: downloading Data function
     func downloadData(completion: @escaping DataHandler)
     {
         let dataTask = session.dataTask(with: self.request) { (data, response, error) in

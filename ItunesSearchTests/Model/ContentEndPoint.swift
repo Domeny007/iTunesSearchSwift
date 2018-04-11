@@ -1,5 +1,7 @@
 import Foundation
 
+
+//    MARK: end point enum
 enum ContentEndPoint {
     
     case search(term: String, entity: String, limit: String)

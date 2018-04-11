@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -52,8 +51,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView tag="2" contentMode="scaleToFill" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="H3i-YX-oJr">
-                                <rect key="frame" x="0.0" y="360" width="375" height="216"/>
+                            <pickerView tag="2" contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="H3i-YX-oJr">
+                                <rect key="frame" x="0.0" y="360" width="375" height="258"/>
                                 <connections>
                                     <outlet property="dataSource" destination="WV0-il-hIw" id="ScV-Yt-ayL"/>
                                     <outlet property="delegate" destination="WV0-il-hIw" id="4in-MH-4ZF"/>
@@ -62,6 +61,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="858-dG-f7B" firstAttribute="bottom" secondItem="H3i-YX-oJr" secondAttribute="bottom" id="02j-63-IKt"/>
                             <constraint firstItem="LvY-92-beK" firstAttribute="leading" secondItem="858-dG-f7B" secondAttribute="leading" id="7E6-ZL-y1k"/>
                             <constraint firstItem="9eb-RY-crF" firstAttribute="top" secondItem="qaG-wL-mL2" secondAttribute="bottom" constant="20" id="8Ct-Pw-Flf"/>
                             <constraint firstItem="H3i-YX-oJr" firstAttribute="top" secondItem="LvY-92-beK" secondAttribute="bottom" constant="1" id="8nO-q4-nQe"/>

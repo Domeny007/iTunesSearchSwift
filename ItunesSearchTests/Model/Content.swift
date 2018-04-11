@@ -1,5 +1,6 @@
 import Foundation
 
+//    MARK: - dawnloaded content structure
 struct Content {
     
     var name: String?
@@ -9,7 +10,7 @@ struct Content {
     var artworkURL: URL?
     var itunesURL: URL?
     
-
+    //    MARK: - api keys structure
     private struct APIKeys {
         static let name = "trackName"
         static let artworkURL = "artworkUrl60"

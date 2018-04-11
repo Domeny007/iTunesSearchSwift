@@ -13,6 +13,8 @@ class ContentViewController: UIViewController, UITableViewDataSource,UITableView
     var resultControllet = UIViewController()
     var mediaString: String?
     var numberOfRowsString: String?
+    var webViewController:SFSafariViewController!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +64,7 @@ class ContentViewController: UIViewController, UITableViewDataSource,UITableView
         cell.selectionStyle = .blue
         return cell
     }
+    //    MARK: - 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let content = contentArray?[indexPath.row]
@@ -71,7 +74,7 @@ class ContentViewController: UIViewController, UITableViewDataSource,UITableView
         
     }
     func showContentsWebSite(with url: URL) {
-        let webViewController = SFSafariViewController(url: url)
+        webViewController = SFSafariViewController(url: url)
         present(webViewController, animated: true, completion: nil)
         
     }

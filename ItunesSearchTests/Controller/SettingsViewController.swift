@@ -16,7 +16,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doso()
+        fillNumberOfRowsArray()
     }
     
     //    MARK: - Passing data to Content View Controller
@@ -67,7 +67,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
         
     }
-    func doso() {
+    //    MARK: - function than filling array of rows numbers
+    func fillNumberOfRowsArray() {
         for i in 1..<201 {
             rowsSetting.append(String(i))
         }

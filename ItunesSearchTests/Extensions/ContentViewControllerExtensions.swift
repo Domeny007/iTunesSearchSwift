@@ -1,6 +1,7 @@
-
 import Foundation
 import UIKit
+
+//    MARK: - ContainerViewContoller SearchBarDelegate extension
 extension ContentViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let term = searchBar.text!
